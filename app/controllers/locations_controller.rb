@@ -5,12 +5,14 @@ class LocationsController < ApplicationController
   def index
     @locations = Location.all
 
-    render json: @locations
+    # i am including the temperatues associated with each location below
+    render json: @locations.to_json(include: :temperatures)
   end
 
+  # were showing the temperatures related to each location using the include bc we cant inslude a "subschema" to the location model
   # GET /locations/1
   def show
-    render json: @location
+    render json: @location.to_json(include: :temperatures)
   end
 
 
