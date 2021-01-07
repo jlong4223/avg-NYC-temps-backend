@@ -29,6 +29,6 @@ class TemperaturesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def temperature_params
-      params.require(:temperature).permit(:average_high_f, :average_low_f, :month)
+      params.require(:temperature).permit(:average_high_f, :average_low_f, :month, :location_id)
     end
 end
